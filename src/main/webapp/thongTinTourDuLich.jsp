@@ -40,13 +40,13 @@
                         </div>
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="img/slider/1.png" class="d-block w-100" alt="...">
+                                <img src="img/slider/LangBac4.png" class="d-block w-100" alt="...">
                             </div>
                             <div class="carousel-item">
-                                <img src="img/slider/2.png" class="d-block w-100" alt="...">
+                                <img src="img/slider/LangBac5.png" class="d-block w-100" alt="...">
                             </div>
                             <div class="carousel-item">
-                                <img src="img/slider/3.png" class="d-block w-100" alt="...">
+                                <img src="img/slider/LangBac6.png" class="d-block w-100" alt="...">
                             </div>
                         </div>
                         <button class="carousel-control-prev" type="button"
