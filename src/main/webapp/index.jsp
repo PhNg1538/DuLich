@@ -71,7 +71,9 @@
 								alt=""></a>
 							<div class="card-body">
 								<h4 class="card-title">
-									<a href="<%=url %>/thongTinTourDuLich.jsp">HUS_VNU</a>
+									
+                                                                <a href="<%=url %>/thongTinTourDuLich.jsp?id=334">HUS_VNU</a>
+
                                                                    
 								</h4>
 								<h5>50.000</h5>
@@ -93,7 +95,7 @@
 								alt="" ></a>
 							<div class="card-body">
 								<h4 class="card-title">
-									<a href="<%=url %>/thongTinTourDuLich.jsp">Áo thun Pro-S1</a>
+									<a href="<%=url %>/thongTinTourDuLich.jsp?id=19LTT">Áo thun Pro-S1</a>
 								</h4>
 								<h5>50.000</h5>
 								<p class="card-text">Sản phẩm thoáng mát, có độ bền tốt, giữ
