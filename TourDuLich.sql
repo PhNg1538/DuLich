@@ -19,27 +19,6 @@
 CREATE DATABASE IF NOT EXISTS `mywebsite` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
 USE `mywebsite`;
 
--- Dumping structure for table mywebsite.chitietdonhang
-CREATE TABLE IF NOT EXISTS `chitietdonhang` (
-  `machitietdonhang` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `madonhang` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `masanpham` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `soluong` double DEFAULT '0',
-  `giagoc` double DEFAULT '0',
-  `giamgia` double DEFAULT '0',
-  `giaban` double DEFAULT '0',
-  `thuevat` double DEFAULT '0',
-  `tongtien` double DEFAULT '0',
-  PRIMARY KEY (`machitietdonhang`),
-  KEY `FK_chitietdonhang_donhang` (`madonhang`) USING BTREE,
-  KEY `FK_chitietdonhang_sanpham` (`masanpham`) USING BTREE,
-  CONSTRAINT `FK_chitietdonhang_donhang` FOREIGN KEY (`madonhang`) REFERENCES `donhang` (`madonhang`),
-  CONSTRAINT `FK_chitietdonhang_sanpham` FOREIGN KEY (`masanpham`) REFERENCES `sanpham` (`masanpham`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- Dumping data for table mywebsite.chitietdonhang: ~0 rows (approximately)
-DELETE FROM `chitietdonhang`;
-
 -- Dumping structure for table mywebsite.diadiem
 CREATE TABLE IF NOT EXISTS `diadiem` (
   `ID` varchar(250) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -52,35 +31,20 @@ CREATE TABLE IF NOT EXISTS `diadiem` (
   `img` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `img2` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `img3` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `diadiem1` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `img_dd1` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `mota_dd1` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `diadiem2` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `img_dd2` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `mota_dd2` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table mywebsite.diadiem: ~0 rows (approximately)
+-- Dumping data for table mywebsite.diadiem: ~2 rows (approximately)
 DELETE FROM `diadiem`;
-INSERT INTO `diadiem` (`ID`, `name`, `giatour`, `thoigian`, `thoiluong`, `diadiem`, `linkggmap`, `img`, `img2`, `img3`) VALUES
-	('19LTT', 'Đại học Tổng Hợp', 10000, '2025', 2, '19 Lê Thánh Tông', NULL, 'img/slider/LangBac5.png', 'img/slider/3.png', 'img/slider/1.png'),
-	('334', 'Trường Đại học khoa học Tự nhiên, Đại học Quốc gia Hà Nội', 2500, '30 tháng 11 năm 2024', 1.5, '334 Nguyễn Trãi, Thanh Xuân, Hà Nội, Viêt  Nam', 'https://maps.app.goo.gl/dz8deHHuXs6g2ZLRA', 'img/slider/LangBac4.png', 'img/slider/2.png', 'img/slider/1.png');
-
--- Dumping structure for table mywebsite.donhang
-CREATE TABLE IF NOT EXISTS `donhang` (
-  `madonhang` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `makhachhang` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `diachinguoimua` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `diachinguoinhan` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `trangthai` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `thanhtoan` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `trangthaithanhtoan` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `tienthanhtoan` double DEFAULT NULL,
-  `tienthieu` double DEFAULT NULL,
-  `ngaydathang` date DEFAULT NULL,
-  `ngaygiaohang` date DEFAULT NULL,
-  PRIMARY KEY (`madonhang`),
-  KEY `FK_donhang_khachhang` (`makhachhang`) USING BTREE,
-  CONSTRAINT `FK_donhang_khachhang` FOREIGN KEY (`makhachhang`) REFERENCES `khachhang` (`makhachhang`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- Dumping data for table mywebsite.donhang: ~0 rows (approximately)
-DELETE FROM `donhang`;
+INSERT INTO `diadiem` (`ID`, `name`, `giatour`, `thoigian`, `thoiluong`, `diadiem`, `linkggmap`, `img`, `img2`, `img3`, `diadiem1`, `img_dd1`, `mota_dd1`, `diadiem2`, `img_dd2`, `mota_dd2`) VALUES
+	('19LTT', 'Đại học Tổng Hợp', 10000, '2025', 2, '19 Lê Thánh Tông', NULL, 'img/slider/BN1.png', 'img/slider/BN2.png', 'img/slider/BN3.png', NULL, NULL, NULL, NULL, NULL, NULL),
+	('334', 'Trường Đại học khoa học Tự nhiên, Đại học Quốc gia Hà Nội', 2500, '30 tháng 11 năm 2024', 1.5, '334 Nguyễn Trãi, Thanh Xuân, Hà Nội, Viêt  Nam', 'https://maps.app.goo.gl/dz8deHHuXs6g2ZLRA', 'img/slider/BN1.png', 'img/slider/BN2.png', 'img/slider/BN3.png', NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- Dumping structure for table mywebsite.khachhang
 CREATE TABLE IF NOT EXISTS `khachhang` (
@@ -103,7 +67,7 @@ CREATE TABLE IF NOT EXISTS `khachhang` (
   PRIMARY KEY (`makhachhang`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table mywebsite.khachhang: ~25 rows (approximately)
+-- Dumping data for table mywebsite.khachhang: ~22 rows (approximately)
 DELETE FROM `khachhang`;
 INSERT INTO `khachhang` (`makhachhang`, `tendangnhap`, `matkhau`, `hoten`, `gioitinh`, `diachi`, `diachinhanhang`, `diachimuahang`, `ngaysinh`, `sodienthoai`, `email`, `dangkinhanbangtin`, `maxacthuc`, `thoigianhieulucmaxacthuc`, `trangthaixacthuc`, `duongdananh`) VALUES
 	('1667732670893', 'tungitv', '123456', 'Le Nhat Tung', 'Nam', 'Poland', 'France', 'Vietnam', '2022-11-06', '+48123456789', 'abc123@gmail.com', 0, NULL, NULL, NULL, NULL),
@@ -131,69 +95,6 @@ INSERT INTO `khachhang` (`makhachhang`, `tendangnhap`, `matkhau`, `hoten`, `gioi
 	('KH3', 'zxcvbnm', 'asdfgh', 'Phi Hoang', 'Nam', 'Gia Lai', 'Thu Duc', 'Binh Dinh', '2003-06-14', '0123654725', 'poiuyt@gmail.com', 0, NULL, NULL, NULL, NULL),
 	('KH4', 'abcxyz', '159753', 'Duy Vu', 'Nam', 'Dong Nai', 'Ben Tre', 'Kien Giang', '1989-10-31', '0123457896', 'lmxjcnan@gmail.com', 0, NULL, NULL, NULL, NULL),
 	('KH5', 'jafueasd123', 'zxcvbnm123', 'k', 'k', '123', 'k', 'k', NULL, 'k', 'k', 0, NULL, NULL, NULL, NULL);
-
--- Dumping structure for table mywebsite.sanpham
-CREATE TABLE IF NOT EXISTS `sanpham` (
-  `masanpham` varchar(50) NOT NULL,
-  `tensanpham` varchar(512) DEFAULT NULL,
-  `matacgia` varchar(255) DEFAULT NULL,
-  `namxuatban` int DEFAULT NULL,
-  `gianhap` double DEFAULT NULL,
-  `giagoc` double DEFAULT NULL,
-  `giaban` double DEFAULT NULL,
-  `soluong` double DEFAULT NULL,
-  `matheloai` varchar(50) DEFAULT NULL,
-  `ngonngu` varchar(255) DEFAULT NULL,
-  `mota` text,
-  PRIMARY KEY (`masanpham`),
-  KEY `FK_sanpham_theloai` (`matheloai`) USING BTREE,
-  KEY `FK_sanpham_tacgia` (`matacgia`) USING BTREE,
-  CONSTRAINT `FK_sanpham_tacgia` FOREIGN KEY (`matacgia`) REFERENCES `tacgia` (`matacgia`),
-  CONSTRAINT `FK_sanpham_theloai` FOREIGN KEY (`matheloai`) REFERENCES `theloai` (`matheloai`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
--- Dumping data for table mywebsite.sanpham: ~5 rows (approximately)
-DELETE FROM `sanpham`;
-INSERT INTO `sanpham` (`masanpham`, `tensanpham`, `matacgia`, `namxuatban`, `gianhap`, `giagoc`, `giaban`, `soluong`, `matheloai`, `ngonngu`, `mota`) VALUES
-	('SP1', 'Java', 'TG1', 2000, 120000, 100000, 110000, 50, 'CT', 'Viet', NULL),
-	('SP2', 'C/C++', 'TG2', 1950, 150000, 30000, 160000, 20, 'KH', 'Viet', NULL),
-	('SP3', 'Python', 'TG3', 2003, 50000, 50000, 70000, 30, 'KT', 'Anh', NULL),
-	('SP4', 'JS', 'TG4', 2000, 140000, 130000, 170000, 70, 'PL', 'Anh', NULL),
-	('SP5', 'GoLang', 'TG5', 1980, 20000, 15000, 50000, 100, 'TT', 'Anh', NULL);
-
--- Dumping structure for table mywebsite.tacgia
-CREATE TABLE IF NOT EXISTS `tacgia` (
-  `matacgia` varchar(255) NOT NULL,
-  `hovaten` varchar(255) DEFAULT NULL,
-  `ngaysinh` date DEFAULT NULL,
-  `tieusu` text,
-  PRIMARY KEY (`matacgia`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
--- Dumping data for table mywebsite.tacgia: ~5 rows (approximately)
-DELETE FROM `tacgia`;
-INSERT INTO `tacgia` (`matacgia`, `hovaten`, `ngaysinh`, `tieusu`) VALUES
-	('TG1', 'Nguyen Van A', '2000-11-11', NULL),
-	('TG2', 'Dao Trinh Trong', '1990-02-04', NULL),
-	('TG3', 'Pham Hoang Huy', '1989-07-24', NULL),
-	('TG4', 'Le Ngoc', '2003-10-31', NULL),
-	('TG5', 'Nguyen Sang', '1995-08-21', NULL);
-
--- Dumping structure for table mywebsite.theloai
-CREATE TABLE IF NOT EXISTS `theloai` (
-  `matheloai` varchar(50) NOT NULL DEFAULT '',
-  `tentheloai` varchar(255) NOT NULL DEFAULT '',
-  PRIMARY KEY (`matheloai`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
--- Dumping data for table mywebsite.theloai: ~5 rows (approximately)
-DELETE FROM `theloai`;
-INSERT INTO `theloai` (`matheloai`, `tentheloai`) VALUES
-	('CT', 'Chinh tri'),
-	('KH', 'Khoa học'),
-	('KT', 'Kinh tế'),
-	('PL', 'Pháp luật'),
-	('TT', 'Trinh thám');
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
