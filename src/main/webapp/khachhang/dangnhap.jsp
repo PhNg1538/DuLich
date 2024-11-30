@@ -44,7 +44,7 @@ String url = request.getScheme() + "://" + request.getServerName() + ":" + reque
 		<form class="text-center" action="<%=url1 %>/khach-hang" method="POST">
 			<input type="hidden" name="hanhDong" value="dang-nhap"/>
 		
-			<img class="mb-4" src="<%=url %>/img/logo/logo.png"
+			<img class="mb-4" src="<%=url %>/img/logo/logo.jpg"
 				alt="" width="72">
 			<h1 class="h3 mb-3 fw-normal">ĐĂNG NHẬP</h1>
 			<%
@@ -70,7 +70,7 @@ String url = request.getScheme() + "://" + request.getServerName() + ":" + reque
 			</div>
 			<button class="w-100 btn btn-lg btn-primary" type="submit">Đăng nhập</button>
 			<a href="dangky.jsp">Đăng ký tài khoản mới</a>
-			<p class="mt-5 mb-3 text-muted">&copy; 2017–2025</p>
+			<p class="mt-5 mb-3 text-muted">&copy; 2024–2025</p>
 		</form>
 	</main>
 </body>

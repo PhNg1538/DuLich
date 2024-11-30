@@ -10,7 +10,7 @@
 	<nav class="navbar navbar-expand-lg bg-light">
 		<div class="container-fluid">
 			<a class="navbar-brand" href="#"> <img
-				src="https://1.bp.blogspot.com/-f_5JLvF9_gU/YZGM7p_fkFI/AAAAAAAAAVo/zHkM8tD3ioAvD1pFznG1kw-QOmOibu5ywCLcBGAsYHQ/s150/1-removebg-preview.png"
+				src="img/logo/logo.jpg"
 				alt="Bootstrap" height="24">
 			</a>
 			<button class="navbar-toggler" type="button"
@@ -23,19 +23,9 @@
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 					<li class="nav-item"><a class="nav-link active"
 						aria-current="page" href="<%=url %>/index.jsp">Trang chủ</a></li>
-					<li class="nav-item"><a class="nav-link" href="#">Combo
-							giảm giá</a></li>
-					<li class="nav-item dropdown"><a
-						class="nav-link dropdown-toggle" href="#" role="button"
-						data-bs-toggle="dropdown" aria-expanded="false"> Thể loại </a>
-						<ul class="dropdown-menu">
-							<li><a class="dropdown-item" href="#">Quần Jean</a></li>
-							<li><a class="dropdown-item" href="#">Áo thun</a></li>
-							<li><hr class="dropdown-divider"></li>
-							<li><a class="dropdown-item" href="#">Áo sơ mi</a></li>
-						</ul></li>
-					<li class="nav-item"><a class="nav-link disabled">Hết hàng</a>
-					</li>
+					<li class="nav-item"><a class="nav-link" href="#">Tour Du lịch
+							</a></li>
+					
 				</ul>
 				<form class="d-flex" role="search" style="position: relative;display: block;float: right;">
 					<input class="form-control me-2" type="search"
@@ -58,7 +48,7 @@
 							class="nav-link dropdown-toggle" href="#" role="button"
 							data-bs-toggle="dropdown" aria-expanded="false"> Tài khoản</a>
 							<ul class="dropdown-menu">
-								<li><a class="dropdown-item" href="<%=url %>/khachhang/danhSachDonHang.jsp">Đơn hàng của tôi</a></li>
+								<li><a class="dropdown-item" href="<%=url %>/khachhang/DanhSachTour.jsp">Tour đã đăng ký</a></li>
 								<li><a class="dropdown-item" href="#">Thông báo</a></li>
 								<li><a class="dropdown-item" href="<%=url %>/khachhang/thaydoianh.jsp">Thay đổi ảnh avatar</a></li>
 								<li><a class="dropdown-item" href="<%=url %>/khachhang/thaydoithongtin.jsp">Thay đổi thông tin</a></li>

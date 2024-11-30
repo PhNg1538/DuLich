@@ -268,6 +268,13 @@
                                 <h5 class="card-title mb-4">Thông tin chung</h5>
                                 <ul class="list-group list-group-flush">
                                     <li class="list-group-item">
+                                        <strong>Tọa lạc:</strong> <%= Tour.getName()%> 
+
+                                    </li>
+                                    <li class="list-group-item">
+                                        <strong>Mã tour:</strong> <%= Tour.getID()%> 
+                                    </li>
+                                    <li class="list-group-item">
                                         <strong>Giá tour:</strong> <%= Tour.getGiaTour()%> VND
                                     </li>
                                     <li class="list-group-item">
@@ -277,16 +284,59 @@
                                         <strong>Thời lượng:</strong> <%= Tour.getThoiLuong()%> giờ
                                     </li>
                                     <li class="list-group-item">
-                                        <strong>Địa chỉ:</strong> 
-                                        <a href="<%= Tour.getLinkGGmap()%>" target="_blank" rel="noopener noreferrer">
+                                        <!--                                        <strong>Lịch trình:</strong> 
+                                                                                <a href="<%= Tour.getLinkGGmap()%>" target="_blank" rel="noopener noreferrer">
+                                        <%= Tour.getDiaDiem()%>
+                                    </a>-->
+                                        <strong>Lịch trình:</strong> 
+                                        <a >
                                             <%= Tour.getDiaDiem()%>
                                         </a>
                                     </li>
                                 </ul>
-                                <button id="bookTourBtn" class="btn btn-primary mt-4">Đặt tour</button>
+                                        
+                                        
+                                        
+                                        <%
+						Object obj = session.getAttribute("khachHang");
+						KhachHang khachHang = null;
+						if (obj!=null)
+							khachHang = (KhachHang)obj;
+						
+						if(khachHang==null){
+					%>
+						<a class="btn btn-primary" style="white-space: nowrap;" href="khachhang/dangnhap.jsp">
+							Đăng nhập
+						</a>
+					<%} else { %>
+					<form action="DatTourController" method="post">
+                                    <input type="hidden" name="tourname" value="<%= Tour.getName()%>">
+                                    <input type="hidden" name="TourID" value="<%= Tour.getID()%>">
+                                    <input type="hidden" name="giaTour" value="<%= Tour.getGiaTour()%>">
+                                    <input type="hidden" name="ngayKhaDung" value="<%= Tour.getThoiGianDienRa()%>">
+                                    <input type="hidden" name="thoiLuong" value="<%= Tour.getThoiLuong()%>">
+                                    <input type="hidden" name="lichTrinh" value="<%= Tour.getDiaDiem()%>">
+                                    <button type="submit" class="btn btn-primary mt-4">Đặt tour</button>
+                                </form>			
+						
+					<% } %>
+                                
+
+
+                                <%
+                                    String message = (String) request.getAttribute("message");
+                                    if (message != null) {
+                                %>
+                                <p style="color: green; font-weight: bold;"><%= message%></p>
+                                <%
+                                    }
+                                %>
                             </div>
                         </div>
                     </div>
+
+
+
                 </div>
 
 

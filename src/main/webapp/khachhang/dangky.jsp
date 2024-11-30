@@ -124,16 +124,7 @@
 							khách hàng</label> <input type="text" class="form-control"
 							id="diaChiKhachHang" name="diaChiKhachHang" value="<%=diaChiKhachHang%>">
 					</div>
-					<div class="mb-3">
-						<label for="diaChiMuaHang" class="form-label">Địa chỉ mua
-							hàng</label> <input type="text" class="form-control" id="diaChiMuaHang"
-							name="diaChiMuaHang" value="<%=diaChiMuaHang%>">
-					</div>
-					<div class="mb-3">
-						<label for="diaChiNhanHang" class="form-label">Địa chỉ
-							nhận hàng</label> <input type="text" class="form-control"
-							id="diaChiNhanHang" name="diaChiNhanHang" value="<%=diaChiNhanHang%>">
-					</div>
+					
 					<div class="mb-3">
 						<label for="dienThoai" class="form-label">Điện thoại</label> <input
 							type="tel" class="form-control" id="dienThoai" name="dienThoai" value="<%=dienThoai%>">
