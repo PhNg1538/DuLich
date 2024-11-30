@@ -11,6 +11,7 @@ package model;
 public class DiaDiem {
     private String ID;
     private String name;
+    private String gioiThieu;
     private int giaTour;
     private String  thoiGianDienRa;
     private float thoiLuong;
@@ -36,9 +37,10 @@ public class DiaDiem {
     private String img_dd4;
     private String mota_dd4;
 
-    public DiaDiem(String ID, String name, int giaTour, String thoiGianDienRa, float thoiLuong, String diaDiem, String linkGGmap, String img1, String img2, String img3, String diadiem1, String img_dd1, String mota_dd1, String diadiem2, String img_dd2, String mota_dd2, String diadiem3, String img_dd3, String mota_dd3, String diadiem4, String img_dd4, String mota_dd4) {
+    public DiaDiem(String ID, String name, String gioiThieu, int giaTour, String thoiGianDienRa, float thoiLuong, String diaDiem, String linkGGmap, String img1, String img2, String img3, String diadiem1, String img_dd1, String mota_dd1, String diadiem2, String img_dd2, String mota_dd2, String diadiem3, String img_dd3, String mota_dd3, String diadiem4, String img_dd4, String mota_dd4) {
         this.ID = ID;
         this.name = name;
+        this.gioiThieu = gioiThieu;
         this.giaTour = giaTour;
         this.thoiGianDienRa = thoiGianDienRa;
         this.thoiLuong = thoiLuong;
@@ -60,10 +62,17 @@ public class DiaDiem {
         this.img_dd4 = img_dd4;
         this.mota_dd4 = mota_dd4;
     }
+
+    public DiaDiem(String ID) {
+        this.ID = ID;
+    }
+
+    
     
 
     
 
+    
    
 
     
@@ -78,11 +87,6 @@ public class DiaDiem {
         this.img1 = img1;
         this.img2 = img2;
         this.img3 = img3;
-    }
-    
-
-    public DiaDiem(String ID) {
-        this.ID = ID;
     }
 
     public String getID() {
@@ -99,6 +103,14 @@ public class DiaDiem {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getGioiThieu() {
+        return gioiThieu;
+    }
+
+    public void setGioiThieu(String gioiThieu) {
+        this.gioiThieu = gioiThieu;
     }
 
     public int getGiaTour() {
@@ -141,7 +153,6 @@ public class DiaDiem {
         this.linkGGmap = linkGGmap;
     }
 
-    
     public String getImg1() {
         return img1;
     }
@@ -261,5 +272,8 @@ public class DiaDiem {
     public void setMota_dd4(String mota_dd4) {
         this.mota_dd4 = mota_dd4;
     }
+    
+
+   
     
 }

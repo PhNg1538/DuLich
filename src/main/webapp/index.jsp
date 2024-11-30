@@ -72,7 +72,7 @@
                                     <div class="card-body">
                                         <h4 class="card-title">
 
-                                            <a href="<%=url%>/thongTinTourDuLich.jsp?id=334">Bắc Ninh</a>
+                                            <a href="<%=url%>/thongTinTourDuLich.jsp?id=99">Bắc Ninh</a>
 
 
                                     </h4>

@@ -13,15 +13,15 @@
     String diaDiemId = request.getParameter("id");
 
     // Kiểm tra ID có hợp lệ không
-    DiaDiem diaDiem = null;
+    DiaDiem Tour = null;
     if (diaDiemId != null && !diaDiemId.isEmpty()) {
         // Sử dụng DAO để lấy thông tin địa điểm từ CSDL
         DAODiaDiem daoDiaDiem = new DAODiaDiem();
-        diaDiem = daoDiaDiem.selectById(new DiaDiem(diaDiemId));
+        Tour = daoDiaDiem.selectById(new DiaDiem(diaDiemId));
     }
 
     // Nếu không tìm thấy thông tin, báo lỗi
-    if (diaDiem == null) {
+    if (Tour == null) {
         out.println("<h3>Không tìm thấy thông tin địa điểm!</h3>");
         return;
     }
@@ -109,13 +109,13 @@
                         </div>
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="<%= diaDiem.getImg1()%>" class="d-block w-100" alt="...">
+                                <img src="<%= Tour.getImg1()%>" class="d-block w-100" alt="...">
                             </div>
                             <div class="carousel-item">
-                                <img src="<%= diaDiem.getImg3()%>" class="d-block w-100" alt="...">
+                                <img src="<%= Tour.getImg3()%>" class="d-block w-100" alt="...">
                             </div>
                             <div class="carousel-item">
-                                <img src="<%= diaDiem.getImg2()%>" class="d-block w-100" alt="...">
+                                <img src="<%= Tour.getImg2()%>" class="d-block w-100" alt="...">
                             </div>
                         </div>
                         <button class="carousel-control-prev" type="button"
@@ -132,86 +132,77 @@
 
                     <div class="container">
                         <div class="intro text-center">
-                            <h2>Bắc Ninh</h2>
+                            <h2><%= Tour.getName()%></h2>
                             <p>
-                                Tour du lịch Bắc Ninh 1 ngày đưa quý khách khám phá vùng đất Kinh Bắc – cái nôi của văn hóa
-                                Phật giáo và lịch sử Việt Nam. Hành trình ghé thăm các di tích nổi tiếng như Chùa Bút Tháp 
-                                cổ kính, Chùa Dâu – trung tâm Phật giáo đầu ti
-                                ên của nước ta, Chùa Phật Tích linh thiêng với những bức tượng đá kỳ công, và Đền Đô uy 
-                                nghi – nơi thờ 8 vị vua triều Lý. Đan xen trong chuyến đi là những khoảnh khắc hòa mình vào cảnh sắc thanh bình và tận hưởng các món ăn đặc sản Bắc Ninh.
 
-                                
-                                 du lịch Bắc Ninh 1 ngày đưa quý khách khám phá vùng đất Kinh Bắc – cái nôi của văn hóa
-                                Phật giáo và lịch sử Việt Nam. Hành trình ghé thăm các di tích nổi tiếng như Chùa Bút Tháp 
-                                cổ kính, Chùa Dâu – trung tâm Phật giáo đầu ti
-                                ên của nước ta, Chùa Phật Tích linh thiêng với những bức tượng đá kỳ công, và Đền Đô uy 
-                               
-
-
+                                <%= Tour.getGioiThieu()%>
 
                             </p>
                         </div>
                         <div class="container "> 
-                            
+
 
                             <!-- Timeline Layout -->
                             <div class="info-box" style="position: absolute; top: 20px; left: 300px; width: 500px; background-color: rgba(255, 255, 255, 0.8); padding: 20px; border-radius: 8px;">
                                 <h3>7:00-8:30:</h3>
-                                <h3>Chùa Dâu </h3>
-                                <p>     Nơi khởi  nên của nước ta, Chùa Phật Tích linh thiêng với những bức tượng đá kỳ công, và Đền Đô uy 
-                                nghi – nơi thờ 8 vị vua tnguồn Phật giáo Việt Nam.</p>
-                                <h5>12:00 - Ăn trưa</h5>
-                                
+                                <h3><%= Tour.getDiadiem1()%> </h3>
+                                <p>    <%= Tour.getMota_dd1()%></p>
+
+
                             </div>
 
 
                             <div class="timeline-container" style="top: 0px; left: 10px;">
-                                <div class="timeline-text"> Chùa Dâu</div>
+                                <div class="timeline-text"> <%= Tour.getDiadiem1()%></div>
                                 <div class="image-circle">
-                                    <img src="img/diadiem/img_dd1.png" alt="placeholder">
+                                    <img src="<%= Tour.getImg_dd1()%>" alt="placeholder">
                                 </div>
                             </div>
-                            
-                             <div class="info-box" style="position: absolute; top: 340px; left: 10px; width: 500px; background-color: rgba(255, 255, 255, 0.8); padding: 20px; border-radius: 8px;">
+
+                            <div class="info-box" style="position: absolute; top: 340px; left: 10px; width: 500px; background-color: rgba(255, 255, 255, 0.8); padding: 20px; border-radius: 8px;">
                                 <h3>9:00-10:30 :</h3>
-                                 <h3>Đền Đô</h3>
-                                <p>Đền Đô - nơi khởi nguồn Phật giáo Việt Nam.</p>
-                                
+                                <h3><%= Tour.getDiadiem2()%></h3>
+                                <p><%= Tour.getMota_dd2()%></p>
+                                <h5>12:00 - Ăn trưa</h5>
                             </div>
 
                             <div class="timeline-container" style="top: 60px; left: 700px;">
                                 <div class="image-circle">
-                                    <img src="img/diadiem/img_dd2.png" alt="placeholder">
+                                    <img src="<%= Tour.getImg_dd2()%>" alt="placeholder">
                                 </div>
-                                <div class="timeline-text">Đền Đô</div>
+                                <div class="timeline-text"><%= Tour.getDiadiem2()%></div>
                             </div>
 
-                             <div class="info-box" style="position: absolute; top: 650px; left: 450px; width: 500px; background-color: rgba(255, 255, 255, 0.8); padding: 20px; border-radius: 8px;">
-                                <h3>Điểm đến</h3>
-                                <p>Chùa Phật Tích - nơi khởicủa nước ta, Chùa Phật Tích linh thiêng với những bức tượng đá kỳ công, và Đền Đô uy 
-                                nghi – nơi thờ 8 vị vua triều Lý. Đan xen trong chuyến đ nguồn Phật giáo Việt Nam.</p>
-                                <h3>Lịch trình</h3>
-                                <ul>
-                                    <li>9:00 - Đón khách tại Hà Nội</li>
-                                    <li>10:00 - Thăm Chùa Dâu</li>
-                                    <li>12:00 - Ăn trưa</li>
-                                    <li>14:00 - Thăm Đền Đô</li>
-                                </ul>
+                            <div class="info-box" style="position: absolute; top: 650px; left: 450px; width: 500px; background-color: rgba(255, 255, 255, 0.8); padding: 20px; border-radius: 8px;">
+                                <h3><%= Tour.getDiadiem3()%></h3>
+                                <p><%= Tour.getMota_dd3()%></p>
+
                             </div>
 
 
                             <div class="timeline-container" style="top: 100px; left: 10px;">
-                                <div class="timeline-text">Chùa Phật Tích</div>
+                                <div class="timeline-text"><%= Tour.getDiadiem3()%></div>
                                 <div class="image-circle">
-                                    <img src="img/diadiem/img_dd3.png" alt="placeholder">
+                                    <img src="<%= Tour.getImg_dd3()%>" alt="placeholder">
                                 </div>
                             </div>
                             <div class="timeline-container" style="top: 60px; left: 700px;">
                                 <div class="image-circle">
-                                    <img src="img/diadiem/img_dd4.png" alt="placeholder">
+                                    <img src="<%= Tour.getImg_dd4()%>" alt="placeholder">
                                 </div>
-                                <div class="timeline-text">Đền thờ Trạng nguyên Lê Văn Thịnh</div>
+                                <div class="timeline-text"><%= Tour.getDiadiem4()%></div>
                             </div>
+
+                            <div class="info-box" style="position: absolute; top: 1000px; left: 20px; width: 500px; background-color: rgba(255, 255, 255, 0.8); padding: 20px; border-radius: 8px;">
+                                <h3><%= Tour.getDiadiem4()%></h3>
+                                <p><%= Tour.getMota_dd4()%></p>
+
+                            </div>
+
+
+
+
+
 
                             <!-- Line 1 -->
                             <div class="line" style="top: 10px; left: 10px; width: 1200px; height: 1200px;">
@@ -235,12 +226,6 @@
                         </div>
 
 
-                        <!--                         Line 2 
-                                                <div class="line" style="top: 300px; left: 200px; width: 400px; height: 200px;">
-                                                    <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
-                                                    <path d="M 50 150 Q 200 200 350 50"  stroke="black" fill="transparent" stroke-width="2" />
-                                                    </svg>
-                                                </div>-->
 
 
 
@@ -283,18 +268,18 @@
                                 <h5 class="card-title mb-4">Thông tin chung</h5>
                                 <ul class="list-group list-group-flush">
                                     <li class="list-group-item">
-                                        <strong>Giá tour:</strong> <%= diaDiem.getGiaTour()%> VND
+                                        <strong>Giá tour:</strong> <%= Tour.getGiaTour()%> VND
                                     </li>
                                     <li class="list-group-item">
-                                        <strong>Ngày khả dụng:</strong> <%= diaDiem.getThoiGianDienRa()%>
+                                        <strong>Ngày khả dụng:</strong> <%= Tour.getThoiGianDienRa()%>
                                     </li>
                                     <li class="list-group-item">
-                                        <strong>Thời lượng:</strong> <%= diaDiem.getThoiLuong()%> giờ
+                                        <strong>Thời lượng:</strong> <%= Tour.getThoiLuong()%> giờ
                                     </li>
                                     <li class="list-group-item">
                                         <strong>Địa chỉ:</strong> 
-                                        <a href="<%= diaDiem.getLinkGGmap()%>" target="_blank" rel="noopener noreferrer">
-                                            <%= diaDiem.getDiaDiem()%>
+                                        <a href="<%= Tour.getLinkGGmap()%>" target="_blank" rel="noopener noreferrer">
+                                            <%= Tour.getDiaDiem()%>
                                         </a>
                                     </li>
                                 </ul>
