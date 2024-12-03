@@ -9,7 +9,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import model.DiaDiem;
-import model.TacGia;
+
 
 public class DAODiaDiem implements DAOInterface<DiaDiem> {
 

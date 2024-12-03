@@ -31,7 +31,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>Bookstore</title>
+        <title>Du ngoạn</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" >
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" ></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
@@ -174,6 +174,7 @@
                             </div>
 
                             <div class="info-box" style="position: absolute; top: 650px; left: 450px; width: 500px; background-color: rgba(255, 255, 255, 0.8); padding: 20px; border-radius: 8px;">
+                                <h3>14:00-15:30:</h3>
                                 <h3><%= Tour.getDiadiem3()%></h3>
                                 <p><%= Tour.getMota_dd3()%></p>
 
@@ -194,6 +195,7 @@
                             </div>
 
                             <div class="info-box" style="position: absolute; top: 1000px; left: 20px; width: 500px; background-color: rgba(255, 255, 255, 0.8); padding: 20px; border-radius: 8px;">
+                               <h3>16:00-18:00:</h3>
                                 <h3><%= Tour.getDiadiem4()%></h3>
                                 <p><%= Tour.getMota_dd4()%></p>
 
@@ -278,10 +280,10 @@
                                         <strong>Giá tour:</strong> <%= Tour.getGiaTour()%> VND
                                     </li>
                                     <li class="list-group-item">
-                                        <strong>Ngày khả dụng:</strong> <%= Tour.getThoiGianDienRa()%>
+                                        <strong>Thời gian:</strong> <%= Tour.getThoiGianDienRa()%>
                                     </li>
                                     <li class="list-group-item">
-                                        <strong>Thời lượng:</strong> <%= Tour.getThoiLuong()%> giờ
+                                        <strong>Thời lượng:</strong> <%= Tour.getThoiLuong()%> ngày
                                     </li>
                                     <li class="list-group-item">
                                         <!--                                        <strong>Lịch trình:</strong> 

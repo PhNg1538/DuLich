@@ -106,16 +106,7 @@
 							khách hàng</label> <input type="text" class="form-control"
 							id="diaChiKhachHang" name="diaChiKhachHang" value="<%=diaChiKhachHang%>">
 					</div>
-					<div class="mb-3">
-						<label for="diaChiMuaHang" class="form-label">Địa chỉ mua
-							hàng</label> <input type="text" class="form-control" id="diaChiMuaHang"
-							name="diaChiMuaHang" value="<%=diaChiMuaHang%>">
-					</div>
-					<div class="mb-3">
-						<label for="diaChiNhanHang" class="form-label">Địa chỉ
-							nhận hàng</label> <input type="text" class="form-control"
-							id="diaChiNhanHang" name="diaChiNhanHang" value="<%=diaChiNhanHang%>">
-					</div>
+					
 					<div class="mb-3">
 						<label for="dienThoai" class="form-label">Điện thoại</label> <input
 							type="tel" class="form-control" id="dienThoai" name="dienThoai" value="<%=dienThoai%>">
@@ -125,11 +116,7 @@
 							type="email" class="form-control" id="email" name="email"  value="<%=email%>">
 					</div>
 					<hr />					
-					<div class="mb-3">
-						<label for="dongYNhanMail" class="form-label">Đồng ý nhận
-							email</label> <input type="checkbox" class="form-check-input"
-							id="dongYNhanMail" name="dongYNhanMail" <%=(dongYNhanMail?"checked":"")%> >
-					</div>
+					
 					<input class="btn btn-primary form-control" type="submit"
 						value="Lưu thông tin" name="submit" id="submit" />
 				</div>

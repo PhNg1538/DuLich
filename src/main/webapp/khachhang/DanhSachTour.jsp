@@ -45,8 +45,8 @@
                 <tr>
                     <th>Tên Tour</th>
                     <th>Mã Tour</th>
-                    <th>Ngày Khả Dụng</th>
-                    <th>Thời Lượng</th>
+                    <th>Thời gian</th>
+                    <th>Thời Lượng ( ngày)</th>
                     <th>Lịch Trình</th>
                     <th>Giá Tour</th>
                 </tr>
